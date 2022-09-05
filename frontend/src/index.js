@@ -11,6 +11,7 @@ root.render(
   <React.StrictMode>
 <BrowserRouter >
     <App />
+    {/* <Router basename={process.env.PUBLIC_URL}/> */}
     </BrowserRouter>
   </React.StrictMode>
 );

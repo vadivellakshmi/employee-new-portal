@@ -33,7 +33,7 @@ function App(prop) {
       {/* <Navbar/> */}
      <Routes>
       
-        <Route path='/' element={<Login/>}></Route>
+        <Route path='employee-new-portal/' element={<Login/>}></Route>
         <Route path='/admindashbord/:id' element={<Admindashboard/>}></Route>
         <Route path='/employeeDashbord' element={<Admin/>}></Route>
         <Route path='/userdashboard/:id' element={<Userdashboard/>}></Route>
