@@ -6,6 +6,8 @@ const path = require('path');
 
 require ('dotenv').config();
 
+const port = process.env.PORT || 2000;
+
 app.use(express.json());
 app.use(cors());
 
@@ -45,7 +47,7 @@ if(process.env.NODE_ENV === 'production')
     })
 }
 
-app.listen(2000, ()  =>{
+app.listen(port, ()  =>{
 
     console.log("server is running")
 })
