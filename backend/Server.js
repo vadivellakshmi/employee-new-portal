@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const express = require("express");
 const app = express();
-const cors = require("cors")
-
+const cors = require("cors");
+const path = require('path');
 
 require ('dotenv').config();
 
@@ -36,7 +36,14 @@ app.use('/jobtype',jobtyperouter);
 const idproofrouter = require('./route/idproof')
 app.use('/idproof',idproofrouter);
 
-
+__dirname=path.resolve()
+if(process.env.NODE_ENV === 'production')
+{
+    app.use(express.static(path.join(__dirname, "/frontend/build")))
+    app.get("*", (req,res) =>{
+        res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+    })
+}
 
 app.listen(2000, ()  =>{
 
